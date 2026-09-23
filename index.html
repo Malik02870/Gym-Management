@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHEC GYM — Gym Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161616'/%3E%3Ctext x='16' y='22' font-size='18' font-weight='bold' text-anchor='middle' font-family='Arial' fill='%23f0f0f0'%3EA%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="app">
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <div class="login-brand">
+          <div class="login-logo" id="login-logo"></div>
+          <div>
+            <h1 id="login-brand-name">SHEC GYM</h1>
+            <span>Gym Management System</span>
+          </div>
+        </div>
+        <h2>Sign in to continue</h2>
+
+        <div class="field">
+          <label for="login-user">Username</label>
+          <input id="login-user" type="text" autocomplete="username" placeholder="e.g. admin" />
+        </div>
+        <div style="height: 12px"></div>
+        <div class="field">
+          <label for="login-pass">Password</label>
+          <input id="login-pass" type="password" autocomplete="current-password" placeholder="••••••••" />
+        </div>
+
+        <div style="height: 14px"></div>
+        <button class="btn btn-primary btn-block" id="login-btn">Sign In</button>
+        <div class="login-error" id="login-error"></div>
+
+        <div class="demohint login-demohint" style="margin-top: 18px">Quick demo accounts — click to fill:</div>
+        <div class="demo-users" id="demo-users"></div>
+
+        <div class="login-foot">ApexGym &middot; University Project &middot; JavaScript Web App</div>
+      </div>
+    </div>
+
+    <!-- APP SHELL -->
+    <div id="shell" class="shell" hidden>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+          <div class="sidebar-logo" id="sidebar-logo"></div>
+          <div class="sidebar-title"><span id="sidebar-brand-name">SHEC GYM</span><span class="st-sub">Manager</span></div>
+        </div>
+        <nav class="sidebar-nav" id="sidebar-nav"></nav>
+        <div class="sidebar-user" id="sidebar-user"></div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <button class="icon-btn hamburger" id="hamburger" title="Menu"></button>
+          <div class="search-box" id="global-search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="global-search" type="text" placeholder="Search members, payments, trainers… (Enter)" />
+          </div>
+          <div class="toolbar-spacer"></div>
+          <div class="clock" id="clock"></div>
+          <div class="bell-wrap" id="bell-wrap">
+            <button class="icon-btn" id="bell-btn" title="Notifications"></button>
+            <span class="bell-dot" id="bell-dot" hidden></span>
+            <div class="bell-panel" id="bell-panel" hidden></div>
+          </div>
+        </header>
+        <main id="view-root"></main>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script src="assets/lib/qrcodegen.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/views.js"></script>
+  <script src="assets/js/views2.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
